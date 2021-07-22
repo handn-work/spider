@@ -28,11 +28,14 @@ jobs:
           pip install lxml
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           
-      - name: Main
+      - name: Run
+        run: |
+          python spider.py
+          
+      - name: Push
         run: |
           git config --local user.email "2579519815@qq.com"
           git config --local user.name "imlzr"
-          python spider.py
           git add .
           git commit -m "update by github action"
           git push
