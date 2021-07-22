@@ -18,7 +18,7 @@ def fun(filename):
         detail_url ='http:/'+ li.xpath('./td[2]/a/@href')[0]
         detail_url = detail_url.split('&')[0]
         list = detail_url.split('%')
-        detail_url = list[0]+'%'+list[1]+'%'+str(content)+'%'+list[-1]
+        detail_url = list[0]+'%'+list[1]+str(content)+'%'+list[-1]
         fp.write(f'[{content}]({detail_url})')
         fp.write('  \n')
       
