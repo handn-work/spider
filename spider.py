@@ -15,10 +15,7 @@ def fun(filename):
     fp = open(filename,'w',encoding='utf-8')
     for li in li_list:
         content = li.xpath('./td[2]/a/text()')[0]
-        detail_url ='http:/'+ li.xpath('./td[2]/a/@href')[0]
-        list = detail_url.split('%')
-        detail_url = list[0]+'%'+list[1]+str(content)+'%'+list[-1]
-        fp.write(f'[{content}]({detail_url})')
+        fp.write(f'{content}')
         fp.write('  \n')
       
     fp.close()
