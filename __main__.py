@@ -32,6 +32,6 @@ if __name__ == '__main__':
     if not os.path.exists():
         os.mkdir(path)
     
-    filename = path +'/'+nowhour+':'+nowminites+'.md'
+    filename = path +'/'+nowhour+'：'+nowminites+'.md'
 
     fun(filename)
