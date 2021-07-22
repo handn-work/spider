@@ -16,7 +16,7 @@ def fun(filename):
     for li in li_list:
         content = li.xpath('./td[2]/a/text()')[0]
         detail_url ='http:/'+ li.xpath('./td[2]/a/@href')[0]
-        fp.write(f'[{content}]({detail_url})'+'\n')
+        fp.write(f'[{content}]({detail_url})'+' \n')
       
     fp.close()
 
@@ -32,6 +32,6 @@ if __name__ == '__main__':
     if not os.path.exists(path):
         os.mkdir(path)
     
-    filename = path +'/'+str(nowhour)+'：'+str(nowminites)+'.md'
+    filename = path +'/'+str(nowhour)+':'+str(nowminites)+'.md'
 
     fun(filename)
