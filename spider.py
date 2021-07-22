@@ -29,7 +29,7 @@ if __name__ == '__main__':
     nowminites = localtime.tm_min
 
     path = 'weibotop_content/'+str(nowyear)+'-'+str(nowmonth)+'-'+str(nowday)
-    if not os.path.exists():
+    if not os.path.exists(path):
         os.mkdir(path)
     
     filename = path +'/'+str(nowhour)+'：'+str(nowminites)+'.md'
