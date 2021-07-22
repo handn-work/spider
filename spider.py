@@ -16,7 +16,7 @@ def fun(filename):
     for li in li_list:
         content = li.xpath('./td[2]/a/text()')[0]
         detail_url ='http:/'+ li.xpath('./td[2]/a/@href')[0]
-        fp.write(f'[{content}]({detail_url})'+' \n')
+        fp.write(f'[{content}]({detail_url})'+'  ')
       
     fp.close()
 
@@ -27,11 +27,16 @@ if __name__ == '__main__':
     nowday = localtime.tm_mday
     nowhour = localtime.tm_hour
     nowminites = localtime.tm_min
-
-    path = 'weibotop_content/'+str(nowyear)+'-'+str(nowmonth)+'-'+str(nowday)
-    if not os.path.exists(path):
-        os.mkdir(path)
     
-    filename = path +'/'+str(nowhour)+':'+str(nowminites)+'.md'
+    path1 = 'weibotop_content/'+str(nowyear)
+    if not os.path.exists(path1):
+        os.mkdir(path1)
+    path2 = path1 + '/' +str(nowyear)+'-'+str(nowmonth)
+    if not os.path.exists(path2):
+        os.mkdir(path2)
+    path3 = path2 +'/'+ str(nowyear)+'-'+str(nowmonth)+'-' + str(nowday)
+    if not os.path.exists(path3):
+        os.mkdir(path3)
+    filename = path3 +'/'+str(nowhour)+':'+str(nowminites)+'.md'
 
     fun(filename)
